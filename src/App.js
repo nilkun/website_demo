@@ -16,12 +16,9 @@ export default class App extends Component {
       header: <div />,
       page: <Loading />,
       data: "",
-      history: [
-      ],
+      history: [],
       props: {},
-
       users: [],
-
       currentUser: false,
     }
   }
@@ -84,12 +81,6 @@ export default class App extends Component {
         getUsers()
         .then(data => {    
           this.setState({
-            props: { 
-              users: data.users,
-              noAvatar: this.noAvatar,
-              changePage: this.changePage.bind(this),            
-            },
-            page2: "UserList",
             page: <UserList users={ data.users } noAvatar={ this.noAvatar } changePage={this.changePage.bind(this)}/>,
             currentUser: false
           }); 
@@ -99,14 +90,6 @@ export default class App extends Component {
         getProfile(param)
         .then(data => {           
           this.setState({
-            props: { 
-              profile: data[0],
-              works: data[1][0],
-              tags: data[1][1],
-              noAvatar: this.noAvatar,
-              changePage: this.changePage.bind(this),            
-            },
-            page2: "Profile",
             page: <Profile profile={ data[0] } time={Date.now()} works={ data[1][0] } tags={ data[1][1] } noAvatar={this.noAvatar} changePage={this.changePage.bind(this)} />,
             history: this.addPersonToHistory(data[0])[0],
             currentUser: data[0].user.screen_name,
