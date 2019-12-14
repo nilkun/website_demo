@@ -18,20 +18,14 @@
 
     }
     &__navbar {
-        // background-color: blue;
         display: flex;
         color: white;
-        // padding: 1em;
         justify-content: center;
         align-items: center;
-        // margin: 1em;
         & > * {
-            // margin: 1em;
             display: flex;
             &:last-child {
-                // border-left: 3px solid $shade;
                 margin-right: -1em;
-                // padding-left: 2em;
             }
             font-size: $textMedium;
             cursor: pointer;
@@ -57,62 +51,44 @@
     }
 }
 
-
 .history {
     position: fixed;
     top: $navbarHeight;
     right: 0;
     overflow: hidden;
     width: 28rem;
-    // min-width: 25vw;
     max-width: 100%;
     min-height: calc(100vh);
-    // min-height: 30%;
-    //  - $navbarHeight);
     background-color: $colorComplementaryLight;
     transition-duration: .5s;
     &__hide {  
-        // min-width: 0; 
         right: -100%; 
-        // width: 0;
-        // background-color:blue;
     }
-    // transition-duration: .6s;
-    // &:hover {
-    //     height: 0;
-    // }
     &__empty {
         font-size: $textSmall;
-        // white-space: nowrap;
         width: 26rem;
         text-align: center;
         line-height: $textBig;
-        // height: 40vh;
     }
     &__user {
         background-color: $colorComplementaryDark;
         padding: 1rem;
         border-radius: .3rem;
         margin: 1rem;
-        // display: flex;
         color: $shade;
         &__container {
             display: flex;
             flex-direction: row;
             align-items: center;
             cursor: pointer;
-            // transition-duration: .2s;
             &:hover {
                 opacity: .8;
-                // transform: scale(1.05);
             }
         }
         &__about {
             display: flex;
-            // margin: auto;
             flex-direction: column;
             justify-content: space-around;
-            // align-items: center;
             margin-left: 1em;
             &__name {
                 font-size: $textSmall;
@@ -121,7 +97,6 @@
                 font-size: $textSmallest;
             }        
         }
-
         &__avatar {
             width: 3em;
             height: 3em;
@@ -136,7 +111,6 @@
         &:last-child {
             margin-right: 1rem;
         }
-
         &__image {
             margin-right: 1rem;
             & > img {
@@ -152,21 +126,15 @@
             &:hover img {
                 cursor: pointer;
                 transform: scale(1.2);
-                // opacity: 1;
-                // background-color: pink;
             }
         }
         &__title {
             white-space: nowrap;
             width: 6rem;
-            // height: $textSmallest + .;
             overflow: hidden;
-            // font-size: $textSmallest;
             display:block;
             text-overflow: ellipsis;
             padding-bottom: .5rem;
-
-            // background-color: blue;
         }
     }
 }

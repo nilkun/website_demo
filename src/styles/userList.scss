@@ -1,4 +1,3 @@
-// container class (main)
 .pickedCreators {
     margin: 1em;
 
@@ -34,8 +33,6 @@
     @media screen and (max-width: $breakLarge) and (min-width: $breakMedium) {
         width: 95%;
         flex-direction: column;
-        // height: auto;
-        // align-items: center;
     }
     
     &__infobox {
@@ -44,7 +41,6 @@
         width: 40%;
         justify-content: center;
         align-items: center;
-        // overflow: scroll;
         
         &__imgContainer {
             padding-bottom: 70%;
@@ -52,7 +48,6 @@
             width: 70%;
             background-color: $shade;
             border-radius: 100%;
-            // border-width: 350%;
             border-color: $shade;
             overflow: hidden;
             margin-bottom: 1em;
@@ -108,7 +103,6 @@
                 transform: scale(1.12);
                 cursor: pointer;
                 box-shadow: .2em .2em .2em .2em rgba(0,0,0,.5);
-
             }
         }
     }
@@ -117,22 +111,16 @@
         width: 95%;
         flex-direction: row;
         height: 15rem;
-        // height: auto;
-        // align-items: center;
         &__infobox {
             width: 25%;
-            // height: rem;
             &__imgContainer {
                 padding-bottom: 25%;
                 width: 25%;
-                // width: 3rem;
-                // height: 3rem;
             }
         }
         &__works {
             flex-direction: row;
             height: 100%;
-            // max-height: 90%;
             width: 75%;
             &__individual {
                 max-height: 95%;
@@ -142,5 +130,3 @@
         }
     }
 }
-
-//videos { url, picture_url

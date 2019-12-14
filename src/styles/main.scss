@@ -3,10 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 10px;
-    font-family: proxima-nova,Noto Sans JP,sans-serif;
-    
-    // // Allow fullscreen
-    // overflow-x: hidden;
+    font-family: proxima-nova,Noto Sans JP,sans-serif;    
 }
 
 html, body {
@@ -31,7 +28,5 @@ html, body {
 .zoominCursor {
     cursor: zoom-in;
 }
-
-
 
 @keyframes dots { 50% { opacity: 0; } }
