@@ -1,0 +1,233 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    margin: $standardMargin;
+    border-top: 2em solid $shade;
+    &__userdata {
+        width: 100%;
+        background-color: $colorLight;
+        display: flex;
+        padding: 3em;
+        justify-content: center;
+
+        &__avatar {
+            margin: auto 0 auto 0;
+            margin-right: 2em;
+            position: relative;
+            width: $profileAvatarSize;
+            padding-bottom: $profileAvatarSize;
+            height: 0;
+            background-color: $shade;
+            border-radius: 100%;
+            border-color: $shade;
+            & > img {
+                position: absolute;
+                left: 5%;
+                top: 5%;
+                border-radius: 100%;
+                object-fit: cover;
+                width: 90%;
+                height: 90%;
+            }
+        }
+
+        @media screen and (max-width: $breakMedium) {
+            flex-direction: column;
+            &__avatar {
+                align-self: center;
+                width: 60vw;
+                height: 60vw;
+                margin-right: 0;
+            }
+        }   
+
+        &__container {
+            @media screen and (min-width: $breakMedium) { max-width: 50%; }
+            padding-top: $standardMargin;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        &__name {
+            font-size: $textBig;
+            font-weight: bold;
+        }
+        &__profession, &__location { font-size: $textMedium; }   
+        &__bio, &__lookingFor { 
+            font-size: $textSmall; 
+        } 
+        &__sns { display: flex; }
+        &__snsIcon {
+            margin: 1em;
+            & > * {
+                color: $colorDiscrete;
+                font-size: 3em; 
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.portfolio {
+    &__taglist {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: $standardMargin;
+        color: $shade;
+        
+        &__tag {
+            cursor: pointer;
+            padding: .8em;
+            margin: .3em;
+            border-radius: 100px;
+            background-color: $colorComplementaryLight;
+            font-size: $textSmallest;
+            max-width: 100%;
+            text-overflow: ellipsis; 
+            overflow: hidden;
+            &:hover {
+                opacity: .8;
+                background-color: $colorComplementaryDark;
+            }
+        }
+        &__selected {
+            background-color: $colorComplementaryDark;
+        }
+    }
+    &__listing {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%; 
+        background-color: $colorLight; 
+        margin-bottom: 0;
+        padding: $standardMargin;
+        &__wrapper {
+            @media screen and (max-width: $breakMedium) {                 
+                margin: 2em auto auto auto;
+                width: 90%; 
+            }
+            @media screen and (min-width: $breakMedium) {
+                margin: 0 2% 2rem 0; 
+                width: 32%; 
+                display: flex;
+                flex-direction: row;
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+            }
+            &__info {
+                @media screen and (min-width: $breakMedium) { display: none; }
+                background-color: $colorDark;
+                color: $shade;
+                padding: 1.5vw;
+                &__title {
+                    font-size: $huge;
+                    max-width: 95%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    overflow: hidden;
+                    align-items: center;
+                }
+                &__roles {
+                    font-size: $big;
+                    max-width: 95%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    overflow: hidden;
+                    font-style: italic;
+                }
+            }
+        }
+        &__container {
+            position: relative;
+            width: 100%;
+            height: auto;   
+            cursor: pointer;    
+            transition-property: opacity, scale, filter;
+
+            &:hover img {
+                    transform: scale(1.05); 
+                    opacity: .5;
+                    filter: grayscale(100%) blur(.15em); 
+                }  
+            &:hover .portfolio__listing__container__overlay {
+                transform: scale(1.05);
+                opacity: .6;
+            } 
+            &:hover .portfolio__listing__wrapper__info {
+                opacity: 0;
+            } 
+            &__thumbnail {
+                display: block;
+                position: relative;
+                object-fit: cover;
+                width: 100%;
+                @media screen and (min-width: $breakMedium) {
+                    max-height: 18vw;  
+                    min-height: 18vw;
+                }
+                @media screen and (max-width: $breakMedium) {
+                    &.polaroid {
+                        border-width: 3px 3px 0 3px;
+                        border-style: solid;
+                        border-color: $colorDark;                         
+                    }
+
+                }
+                transition: .2s;
+            }
+            &__overlay {
+                position: absolute;
+                color: $colorText;
+                color: $colorComplementaryDark;
+                width: 100%;
+                transform: scale(0);
+                transition: .3s;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                opacity: 0.3;
+                background-color: black;
+                padding: 2em;
+                top: 0;
+                bottom: 0;
+                left:0;
+                right: 0;
+                margin: auto;
+                &__title {
+                    font-size: $huge;
+                    font-weight: bold;
+                    max-width: 95%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    overflow: hidden;
+                }
+                &__roles {
+                    max-width: 95%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    overflow: hidden;
+                    font-style: italic;
+                    font-size: $big;
+                }
+                &__icon {
+                    font-size: 3em;
+                }
+            }  
+        }
+    }
+}

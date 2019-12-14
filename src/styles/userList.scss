@@ -1,0 +1,146 @@
+// container class (main)
+.pickedCreators {
+    margin: 1em;
+
+    &__title {
+        font-size: 3em;
+        padding: 1em;
+        text-decoration: underline;
+    }
+    
+    &__cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.card {
+    width: $cardWidth;
+    background-color: $colorLight;
+    height: $cardHeight;
+    padding: $cardPadding;
+    border-radius: $cardBorderRadius;
+    display: flex;
+    margin: $standardMargin;
+
+    @media screen and (max-width: $breakMedium) {
+        width: 95%;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    @media screen and (max-width: $breakLarge) and (min-width: $breakMedium) {
+        width: 95%;
+        flex-direction: column;
+        // height: auto;
+        // align-items: center;
+    }
+    
+    &__infobox {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        justify-content: center;
+        align-items: center;
+        // overflow: scroll;
+        
+        &__imgContainer {
+            padding-bottom: 70%;
+            position: relative;
+            width: 70%;
+            background-color: $shade;
+            border-radius: 100%;
+            // border-width: 350%;
+            border-color: $shade;
+            overflow: hidden;
+            margin-bottom: 1em;
+        }
+        &__image {
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            border-radius: 100%;
+            object-fit: contain;
+            width: 90%;
+            height: 90%;
+            transition: .4s;
+            &:hover{
+                transform: rotate(-20deg);
+                cursor: pointer;
+            }
+        }
+        &__usertitle {
+            text-align: center;
+            font-size: $titleSize;
+            color: $titleColor;
+        }
+        &__username {
+            text-align: center;
+            font-size: $nameSize;
+            color: $nameColor;
+        }
+    }
+
+    &__works {        
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;     
+       
+        &__individual {
+            object-fit: cover;
+            max-height: 40%;
+            max-width: 45%;
+            height: auto;
+            margin: 3%;
+            border-radius: 3px;
+            border-style: solid;
+            border-width: .2em;
+            border-color: $shade;
+            transition: .3s;
+            @media screen and (max-width: $breakMedium) {
+                        max-width: 95%; 
+                        max-height: 50vw;
+            }   
+            &:hover {
+                transform: scale(1.12);
+                cursor: pointer;
+                box-shadow: .2em .2em .2em .2em rgba(0,0,0,.5);
+
+            }
+        }
+    }
+
+    @media screen and (max-width: $breakLarge) and (min-width: $breakMedium) {
+        width: 95%;
+        flex-direction: row;
+        height: 15rem;
+        // height: auto;
+        // align-items: center;
+        &__infobox {
+            width: 25%;
+            // height: rem;
+            &__imgContainer {
+                padding-bottom: 25%;
+                width: 25%;
+                // width: 3rem;
+                // height: 3rem;
+            }
+        }
+        &__works {
+            flex-direction: row;
+            height: 100%;
+            // max-height: 90%;
+            width: 75%;
+            &__individual {
+                max-height: 95%;
+                max-width: 23%;
+                margin: 1%;
+            }
+        }
+    }
+}
+
+//videos { url, picture_url
