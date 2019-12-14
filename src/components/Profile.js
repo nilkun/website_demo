@@ -41,7 +41,7 @@ const Profile = p => {
     useEffect(() => {
         setTag("All");
         setContentNumber(contentNumberConstant.current);
-        numberOfItems.current = 6;
+        numberOfItems.current += 6;
         setProps(p);
     },[p])
 
